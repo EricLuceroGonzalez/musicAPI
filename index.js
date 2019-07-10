@@ -1,9 +1,13 @@
-// New thing: Desestructuracion
-const { app, port } = require("./server/index");
+// require and configure dotenv
+require("dotenv").config();
 
-console.log(serverA);
+// New thing: Desestructuracion
+const { app, port } = require("./server");
+
+// pull database from ./database/index.js
+require("./database");
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at ${port}`);
+  console.log(`Server running at ${port}...`);
 });
